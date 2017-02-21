@@ -23,11 +23,11 @@ $(document).ready(function() {
     getTooltip : undefined // Loaded later
   };
 
-  i18nProvider.getJson('json', 'tooltipdata',
-    function(tooltipdata) {
-      demo.getTooltip = i18nTranslatorFactory.createTranslator(tooltipdata);
-    }
-  );
+  //i18nProvider.getJson('json', 'tooltipdata',
+    //function(tooltipdata) {
+      //demo.getTooltip = i18nTranslatorFactory.createTranslator(tooltipdata);
+    //}
+  //);
 
   var MIN_WORDS = 100;
 
@@ -379,7 +379,7 @@ function showVizualization(theProfile) {
     });
   }
 
-  onSampleTextChange();
+  //onSampleTextChange();
   $content.keyup(updateWordsCount);
-  $('.sample-radio').change(onSampleTextChange);
+  //$('.sample-radio').change(onSampleTextChange);
 });
