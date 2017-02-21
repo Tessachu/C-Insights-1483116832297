@@ -1,5 +1,5 @@
 var cs = {
-    version: '2012.12.30.17.07',
+    version: '2017.01.05.14.25',
     waiting: 'https://console.ng.bluemix.net/devops/code/file/tessa.l.watkins@gmail.com-OrionContent/C-Insights-1483116832297/public/images/waiting.gif',
     tab: '',
     init: function () {
@@ -17,18 +17,25 @@ var cs = {
             var errorMsg = '';
             if($('#client-name').val().length <= 0) {
             	validationErrors++;
+            	cs.triggerModal('MISSING CLIENT NAME', '<p>Please type in the name of the client this report is for.</p>', 'CLOSE');
+            	return false;
             }
+            var msg = '';
             switch(cs.tab){
             	case 'text':
             		if($('#text textarea').val().length <= 0) {
             			validationErrors++;
+            			msg = 'Please type or paste a minimum of 3,500 words into the Text Input field.';
             		}
             		break;
             	default:
-            	validationErrors++;
+            		break;
             }
-        	cs.getData();
-            
+            if(validationErrors > 0){
+            	cs.triggerModal('MISSING DATA', '<p>'+ msg + '</p>', 'CLOSE');
+            } else {
+            	cs.getData();
+            }
         });
         //Initialize a tab
         cs.switchTab('text');
@@ -40,11 +47,11 @@ var cs = {
         $('ul.tabs li[data-id=' + tab + ']').addClass('active');
         $('.tabbed-sections #' + tab).removeClass('hide').addClass('active');
     },
-    triggerModal: function(title, message, exitBtn, updateOnly) {
+    triggerModal: function(title, message, exitBtn) {
 		var $modal = $('#modal');
 		$modal.find('h1').text(title);
 		$modal.find('.modal-content').html('<p>' + message + '</p>');
-		$modal.find('.modal-close').text('CLOSE');
+		$modal.find('.modal-close').text(exitBtn);
 		if($modal.css('display') == 'none'){
 			$('#trigger-modal').click();//Trigger modal
 		}
@@ -80,8 +87,12 @@ var cs = {
             default:
                 formData = {
                     recaptcha: recaptcha,
+                    source_type: 'text',
                     text: $('#' + cs.tab + ' textarea').first().val(),
-                    language: 'en'
+                    language: 'en',
+                    accept_language: 'en',
+                    include_raw: true,
+                    //raw_scores: true
                 };
                 break;
         }
@@ -140,7 +151,7 @@ var cs = {
     	
     	
     	//CSV Row Headers
-    	csvString += 'Group' + colSep + 'Category' + colSep + 'Personality Detail' + colSep + 'Percentage' + rowSep;
+    	csvString += 'Group' + colSep + 'Category' + colSep + 'Personality Detail' + colSep + 'Raw Score' + colSep + 'Percentage' + rowSep;
     	
     	//Cycle through the data and generate the file in a string format
     	if(cs.cExists(data.tree.children)) {
@@ -164,10 +175,10 @@ var cs = {
 	    								//Cycling through grandchildren. "Dutifullness", "Altruism", "Fiery"
 	    								var gChildObj = childObj.children[gc_i];
 	    								//console.log('--- ' + gChildObj.name + ': ' + gChildObj.percentage);
-	    								csvString += rootObj.name + colSep + childObj.name + colSep + gChildObj.name + colSep + gChildObj.percentage + rowSep;
+	    								csvString += rootObj.name + colSep + childObj.name + colSep + gChildObj.name + colSep + gChildObj.raw_score + colSep + gChildObj.percentage + rowSep;
 	    							}
 	    						} else {
-	    							csvString += rootObj.name + colSep + childObj.name + colSep + colSep + childObj.percentage + rowSep;
+	    							csvString += rootObj.name + colSep + childObj.name + colSep + colSep  +  childObj.raw_score + colSep  + childObj.percentage + rowSep;
 	    						}
 	    					}
 	    				}

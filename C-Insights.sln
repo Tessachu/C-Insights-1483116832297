@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8B3017F9-01AC-4B63-A193-71E5FA7861F7}"
+	ProjectSection(SolutionItems) = preProject
+		.cfignore = .cfignore
+		.gitignore = .gitignore
+		access.log = access.log
+		app.js = app.js
+		CONTRIBUTING.md = CONTRIBUTING.md
+		LICENSE = LICENSE
+		manifest.yml = manifest.yml
+		package.json = package.json
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{BEDCF8BA-F47C-478C-BD94-FFB1F04174F8}"
+	ProjectSection(SolutionItems) = preProject
+		config\error-handler.js = config\error-handler.js
+		config\express.js = config\express.js
+		config\i18n.js = config\i18n.js
+		config\security.js = config\security.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "i18n", "i18n", "{590C3CDF-D0E7-4C39-8CE5-6E14313AE32B}"
+	ProjectSection(SolutionItems) = preProject
+		i18n\en.json = i18n\en.json
+		i18n\es.json = i18n\es.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "launchConfigurations", "launchConfigurations", "{C3FBB287-F415-4594-98CC-BCF10CB42987}"
+	ProjectSection(SolutionItems) = preProject
+		launchConfigurations\C-Insights-1483116832297.launch = launchConfigurations\C-Insights-1483116832297.launch
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{8556A68A-F33D-4327-B493-CC11A009D913}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "views", "views", "{18EE9FC2-330E-4B77-A5C7-E67CC4C0A11B}"
+	ProjectSection(SolutionItems) = preProject
+		views\index.ejs = views\index.ejs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "css", "css", "{A0AD1B79-EE93-433E-98FE-319EA5C74CA2}"
+	ProjectSection(SolutionItems) = preProject
+		public\css\banner.css = public\css\banner.css
+		public\css\normalize_3.0.2.css = public\css\normalize_3.0.2.css
+		public\css\personality.css = public\css\personality.css
+		public\css\style.css = public\css\style.css
+		public\css\watson-bootstrap-dark.css = public\css\watson-bootstrap-dark.css
+		public\css\wireframe.css = public\css\wireframe.css
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{21F8FC1C-82FA-4609-8752-A7A0458E6265}"
+	ProjectSection(SolutionItems) = preProject
+		public\images\app.png = public\images\app.png
+		public\images\favicon.ico = public\images\favicon.ico
+		public\images\link.svg = public\images\link.svg
+		public\images\waiting.gif = public\images\waiting.gif
+		public\images\watson.gif = public\images\watson.gif
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "js", "js", "{8668EEF4-5743-461A-871D-56CAC1B556D2}"
+	ProjectSection(SolutionItems) = preProject
+		public\js\demo.js = public\js\demo.js
+		public\js\i18n.js = public\js\i18n.js
+		public\js\jquery.leanModal.min.js = public\js\jquery.leanModal.min.js
+		public\js\main.js = public\js\main.js
+		public\js\personality.js = public\js\personality.js
+		public\js\string-utils.js = public\js\string-utils.js
+		public\js\textsummary.js = public\js\textsummary.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "json", "json", "{876CB96F-4708-45F9-939F-CFBE8BBCAE06}"
+	ProjectSection(SolutionItems) = preProject
+		public\json\facets.json = public\json\facets.json
+		public\json\facets_es.json = public\json\facets_es.json
+		public\json\needs.json = public\json\needs.json
+		public\json\needs_es.json = public\json\needs_es.json
+		public\json\summary.json = public\json\summary.json
+		public\json\summary_es.json = public\json\summary_es.json
+		public\json\tooltipdata.json = public\json\tooltipdata.json
+		public\json\tooltipdata_es.json = public\json\tooltipdata_es.json
+		public\json\traits.json = public\json\traits.json
+		public\json\traits_es.json = public\json\traits_es.json
+		public\json\values.json = public\json\values.json
+		public\json\values_es.json = public\json\values_es.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "text", "text", "{19F031EA-BEB0-4E07-9EEB-19D9CAEFE2C6}"
+	ProjectSection(SolutionItems) = preProject
+		public\text\en.txt = public\text\en.txt
+		public\text\es.txt = public\text\es.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BEDCF8BA-F47C-478C-BD94-FFB1F04174F8} = {8B3017F9-01AC-4B63-A193-71E5FA7861F7}
+		{590C3CDF-D0E7-4C39-8CE5-6E14313AE32B} = {8B3017F9-01AC-4B63-A193-71E5FA7861F7}
+		{C3FBB287-F415-4594-98CC-BCF10CB42987} = {8B3017F9-01AC-4B63-A193-71E5FA7861F7}
+		{8556A68A-F33D-4327-B493-CC11A009D913} = {8B3017F9-01AC-4B63-A193-71E5FA7861F7}
+		{18EE9FC2-330E-4B77-A5C7-E67CC4C0A11B} = {8B3017F9-01AC-4B63-A193-71E5FA7861F7}
+		{A0AD1B79-EE93-433E-98FE-319EA5C74CA2} = {8556A68A-F33D-4327-B493-CC11A009D913}
+		{21F8FC1C-82FA-4609-8752-A7A0458E6265} = {8556A68A-F33D-4327-B493-CC11A009D913}
+		{8668EEF4-5743-461A-871D-56CAC1B556D2} = {8556A68A-F33D-4327-B493-CC11A009D913}
+		{876CB96F-4708-45F9-939F-CFBE8BBCAE06} = {8556A68A-F33D-4327-B493-CC11A009D913}
+		{19F031EA-BEB0-4E07-9EEB-19D9CAEFE2C6} = {8556A68A-F33D-4327-B493-CC11A009D913}
+	EndGlobalSection
+EndGlobal

@@ -28,36 +28,28 @@ require('./config/i18n')(app);
 // Bootstrap application settings
 require('./config/express')(app);
 
-// Create the service wrapper
 var PersonalityInsightsV3 = require('watson-developer-cloud/personality-insights/v3');
 var personality_insights = new PersonalityInsightsV3({
-  username: '6a6ec604-cde3-490b-b43f-59e11e0b2579',
-  password: 'h4iXz2TPscgU',
-  version_date: '2016-12-30'
+  username: '{username}',
+  password: '{password}',
+  version_date: '2016-10-20'
 });
 
 var params = {
-  //content_items: require('./profile.json').contentItems,// Get the content items from the JSON file.
-  text: $('#text textarea').first().val(),
+  // Get the content items from the JSON file.
+  content_items: require('./profile.json').contentItems,
   consumption_preferences: true,
   raw_scores: true,
-  csv_headers: true,
   headers: {
-    'accept-language': 'en',//desired language of response
-    'accept': 'application/json',//desired content type of response: 'application/json'|text/csv'
-    'content-type': 'text/plain;charset=utf-8',//request: 'text/plain;charset=utf-8'|'text/html;charset=utf-8'|'application/json'
-    'content-language': 'en'
+    'accept-language': 'en',
+    'accept': 'application/json'
   }
 };
 
-
-app.post('/api/profile', function(req, res, next) {
-	console.log('What is app.post?');
-	var parameters = extend(req.body, { acceptLanguage : i18n.lng() });
-  
-  	personality_insights.profile(params, function(error, response) {
-	  if (error) console.log('error:', error);
-	  else console.log(JSON.stringify(response, null, 2));
-	  }
-	);
-});
+personality_insights.profile(params, function(error, response) {
+  if (error)
+    console.log('error:', error);
+  else
+    console.log(JSON.stringify(response, null, 2));
+  }
+);
